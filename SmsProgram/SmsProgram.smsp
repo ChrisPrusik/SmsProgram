@@ -1,0 +1,23 @@
+﻿;  SMS-Program.pl (C) 2010 Krzysztof Arkadiusz Prusik, www.SMS-Program.com
+;  $Id$
+;  List of columns:
+;     @Type, Provider, HomePageUrl, AllowAnswer, IsHardware, DefaultUnitCost
+;  Data format:
+;     Type, Provider, HomePageUrl, AllowAnswer, IsHardware, DefaultUnitCost
+;  Note:
+;     ; means comment and it's ignored by program
+;     first and last spaces and tabs of each line are ignored by program
+;     first and last spaces and tabs of each message are ignored by program
+;     numbers in en-us
+;
+@Fields: Type, Provider, HomePageUrl, AllowAnswer, IsHardware, DefaultUnitCost
+sms, Test, , 1, 1, 0
+mms, Test, , 1, 1, 0
+email, Test, , 1, 1, 0
+sms, Ovation, http://www.novatelwireless.com, 1, 1, 0.05
+sms, Merlin, http://www.novatelwireless.com, 1, 1, 0.05
+sms, Novatel, http://www.novatelwireless.com, 1, 1, 0.05
+sms, Nokia, http://www.novatelwireless.com, 1, 1, 0.05
+sms, SmsApiEcoSms, http://smsapi.pl, 1, 0, 0.07
+sms, SmsApiProSms, http://smsapi.pl, 1, 0, 0.165
+sms, SmsApiProSmsOutside, http://smsapi.pl, 1, 0, 0.027

@@ -1,0 +1,290 @@
+﻿;  SMS-Program.pl (C) 2010 Krzysztof Arkadiusz Prusik, www.SMS-Program.pl
+;  $Id$
+;  Data format:
+;     @Category, Name, Additional description
+;     Line 1 of description
+;     Line 2 of description
+;     Line 3 of description
+;     ...
+;     @Category, Name
+;  Warning:
+;     ; means comment and it's ignored by program
+;     first and last spaces and tabs of each line are ignored by program
+;     first and last spaces and tabs of each message are ignored by program
+;
+
+@Zamówienia, Prośba o kod
+Witaj [FirstName]. W celu potwierdzenia zamówienia proszę przesłać kod [Code]
+
+@Zamówienia, Potwierdzenie zamówienia
+Witaj [FirstName]. Zamówienie zostało przyjęte do realizacji
+
+@Zamówienia, Brak towaru
+Witaj [FirstName]. Niestety towaru nie ma obecnie w magazynie. Jak tylko się pojawi, damy znać.
+
+@Spotkania, Potwierdzenie spotkania
+Uprzejmie prosimy o przesłanie kodu [Code] w celu potwierdzenia spotkania
+
+@Spotkania, Zgłoszenie
+Dziękujemy za przesłane zgłoszenie. Potwierdzamy spotkanie w dniu...
+
+@Spotkania, Zmiana terminu
+Uprzejmie informujemy, że umówione spotkanie odbędzie się w innym terminie. Przepraszamy!
+
+@Spotkania, Zmiana grafiku
+Witaj [FirstName] [LastName], z przyczyn od nas niezależnych nastąpiły zmiany w grafiku. Przepraszamy.
+
+@Spotkania, Zmiana godziny
+Zebranie zespołu zostało przełożone na godzinę 17. Prosimy o punktualne przybycie.
+
+@Spotkania, Odwołanie zajęć
+Przepraszamy, Państwa zajęcia zostały odwołane. Skontaktujemy się w celu umówienia nowego terminu
+
+@Spotkania, Zmiana godziny spotkania
+Przepraszamy Państwa spotkanie odbędzie się godzinę później. Za zmianę serdecznie przepraszamy.
+
+@Zaproszenie, Szkolenie
+Sz. Państwo mamy zaszczyt zaprosić na szkolenie dla przedstawicieli naszej firmy odbywające się w dniach...
+
+@Zaproszenie, Do współpracy
+[Company] Sz. Państwo chcielibyśmy zaprosić do współpracy partnerskiej.
+
+@Zaproszenie, Na warsztaty
+[FirstName] [LastName] Zapraszamy na warsztaty szkoleniowe! Udział bezpłatny. Zadzwoń teraz!
+
+@Zaproszenie, Z materiałami
+Sz. Państwo chcielibyśmy zaprosić do zapoznania się z materiałami konferencyjnymi. Szczegóły na recepcji.
+
+@Zaproszenie, Do udziału
+[Company] Zapraszamy do udziału w atrakcyjnej promocji skierowanej do wszystkich przedstawicieli handlowych.
+
+@Zaproszenie, Promocyjne zakypy
+[Company] W czasie trwania promocji każda firma może zrealizować nawet 3 promocyjne zakupy.
+
+@Przypomnienie, Termin
+Sz. P. Uprzejmie przypominamy o zbliżającym się terminie na [Campaign]
+
+@Przypomnienie, Do umowy
+[Company] Przypominamy o konieczności złożenia dokumentów w celu zawarcia umowy.
+
+@Powiadomienie, Nowa wiadomość
+[Company] Otrzymaliście Państwo tę wiadomość w związku ze złożonym zapytaniem technicznym.
+
+@Powiadomienie, Udanego logowania
+[Company] Otrzymaliście Państwo tę wiadomość w związku z udaną próbą logowania do panelu klienta.
+
+@Powiadomienie, Złożona reklamacja
+[Company] Otrzymaliście Państwo tę wiadomość w związku ze złożoną reklamacją.
+
+@Powiadomienie, Próba logowania
+[Company] Otrzymaliście Państwo tę wiadomość w związku z nieautoryzowana próbą logowania do panelu klienta.
+
+@Powiadomienie, Zmiana hasła
+[Company] Otrzymaliście Państwo tą wiadomość w związku ze zmianą hasła.
+
+@Powiadomienie, Zmiana preferencji
+[FirstName] [LastName] Jeżeli nie chcesz otrzymywać automatycznych powiadomień sms z naszego systemu, zmień swoje preferencje w panelu klienta.
+
+@Powiadomienie, Zlecenie przyjęte
+[FirstName] [LastName] Twoje zlecenie zostało przyjęte do realizacji.
+
+@Powiadomienie, O przesyłce
+Powiadomienie o przesyłce nr..., Numer zamówienia dystrybutora...
+
+@Życzenia, Urodziny
+[FirstName], Wszystkiego najlepszego z okazji urodzin! Zadzwoń, mamy dla Ciebie prezent!
+
+@Życzenia, Specjalny rabat
+[FirstName], Otrzymujesz specjany rabat. Wszystkiego najlepszego z okazji urodzin! 
+
+@Życzenia, Niespodzianka
+[FirstName] przyjdź do naszego salonu, czeka na Ciebie niespodzianka z okazji urodzin.
+
+@Życzenia, Imieniny
+[FirstName] - dzisiaj są Twoje imieniny! Wszystkiego najlepszego!
+
+@Życzenia, Święta
+[FirstName] Chcielibyśmy życzyć wszystkim naszyn Klientom Wesołych Świąt oraz cudownych chwil spędzonych w rodzinnym gronie.
+
+@Podziękowanie, Za pomoc
+Sz. P. [FirstName] w imieniu naszej firmy chcialbym złożyć podziękowanie za okazaną pomoc przy realizacji kampanii [Campaign].
+
+@Gratulacje, Nagroda
+Sz. P. [FirstName] serdecznie gratulujemy zajęcia pierwszego miejsca w dorocznym konkursie na najlepszego handlowca. 
+
+@Gratulacje, Najlepszy partner
+[Company] Gratulacje! Uprzejmie informujemy, że Państwa firma otrzymuje nagrodę dla najlepszego partnera naszej firmy. Uroczyste wręczenie nagród odbędzie się w dniu... Zapraszamy.
+
+@Gratulacje, Odebranie nagrody
+Sz. Państwo zapraszamy do odebrania nagrody promocyjnej.
+
+@Płatności, Przekroczona płatność
+[Company] Prosimy o niezwłoczne uregulowanie płatności za fakturę
+
+@Płatności, Wpływ faksu
+[Company] Wpływ faksu do dnia.... z potwierdzoną wpłatą, uchroni przed ograniczeniem świadczenia usług.
+
+@Płatności, Potwierdzenie płatności
+[Company] Państwa płatność została zarejestrowana w naszym systemie.
+
+@Płatności, Dziękujemy za
+[Company] Dziękujemy za dokonaną płatność. Życzymy miłego dnia.
+
+@Płatności, Zamówienia 
+[Company] Potwierdzamy otrzymaną płatność, towar został wysłany zgodnie z zamówieniem. Dziękujemy za skorzystanie z naszych usług.
+
+@Płatności, Zamówienie zrealizowane
+[Company] Uprzejmie informujemy, że zamówienie zostało zrealizowane.
+
+@Wysyłka, Karta wysłana
+[Company] Państwa nowa karta została wysłana. Zapraszamy do korzystania z naszych usług.
+
+@Wysyłka, Towar u kuriera
+[Company] Uprzejmie informujemy, że towar został przekazany kurierowi. Dziękujemy za złożone zamówienie.
+
+@Marketing, Nowy produkt
+Czy widziałeś już nasz nowy produkt? Do końca tygodnia mamy dla Ciebie zniżkę 5%. Zadzwoń!
+
+@Marketing, Do końca tygodnia
+[Company] Promocja na nowy produkt obowiązuje do końca tygodnia.
+
+@Marketing, Nowość!
+Nowość! Mamy przyjemność zaprezentować Państwu nową funkcjonalność naszego produktu...
+
+@Marketing, Nowy katalog
+Już jest dostępny nasz nowy Katalog! Więcej informacji na www...
+
+@Marketing, Oferta dla firm
+[Company] Sprawdź kompleksową ofertę dla firm. Szczegóły u naszych konsultantów.
+
+@Marketing, Promocja
+Tylko dzisiaj, na hasło [Code] otrzymasz zniżkę w wysokości aż 30%! 
+
+@Marketing, 20% rabatu
+Dni naszej firmy! 20% rabatu na cały asortyment w dniach... Smsa pokaż podczas zakupów!
+
+@Marketing, Wyprzedaż
+Wyprzedaż! Tylko teraz 70% rabatu na wybrane modele.
+
+@Marketing, Najnowsza kolekcja
+Ostatnie dni promocji na modele z najnowszej kolekcji. Przyjdź koniecznie! Zapraszamy.
+
+@Marketing, Stary na nowy
+Wymień swój stary niepotrzebny produkt na nowy. Szczegóły promocji znajdziesz na stronie www... lub w naszym salonie.
+
+@Marketing, Super cena
+Super cena tylko do końca maja, lub do wyczerpania zapasów!
+
+@Marketing, Oszczędzaj z nami
+Oszczędzaj z nami - sprawdź najnowszą ofertę promocyjną
+
+@Marketing, Zniżka na
+Tylko do końca miesiąca 50% zniżka na rejestrację [Campaign]
+
+@Marketing, Upust 200 zł
+[Company] Podczas trwania akcji każdy partner przy zakupie wybranych produktów dostanie upust 200 zł!
+
+@Marketing, Letnia wyprzedaż ruszyła
+Letnia wyprzedaż ruszyła! Sprawdź obniżki nawet do 50%! Nie przegap okazji!
+
+@Marketing, Najnowsze modele
+Do wyczerpania stanów magazynowych oferujemy najnowsze modele... z oferty... w wyprzedażowych cenach. Więcej na naszej stronie www.
+
+@Marketing, Prezent
+Odbierz w salonie kupon imienny wystawiony na [FirstName] [LastName], uprawniający do bezpłatnego korzystania z siłowni przez miesiąc
+
+@Marketing, Z przyjacielem
+[FirstName] Przyjdź z przyjacielem do naszego salonu. Czeka niespodzianka.
+
+@Marketing, Wypełnij ankietę
+[FirstName] Weż udział w konkursie [Campaign], wypełnij ankietę. Wszyscy otrzymają prezent. Rozlosujemy też nagrodę główną.
+
+@Marketing, Otrzymasz
+Tylko teraz kupując jeden z promocyjnych produktów... i zestawów..., a otrzymasz...
+
+@Marketing, Cenne nagrody
+Zapraszamy do udziału w konkursie! Chcesz wygrać...? Już teraz kupuj produkty, a cenne nagrody mogą trafić w Twoje ręce.
+
+@Pracownicy, Rocznica
+Z przyjemnością informujemy, że nasza firma obchodzi dziesięciolecie swojego istnienia! Tylko dzisiaj, darmowe kanapki dla pracowników
+
+@Pracownicy, Świętuj z nami
+Świętuj z nami urodziny naszej firmy! Zapraszamy do salonów!
+
+@Pracownicy, Cykl bezpłatnych warsztatów
+Z okazji naszego jubileuszu serdecznie zapraszamy na cykl bezpłatnych warsztatów. Zadzwoń po szczegóły.
+
+@Pracownicy, Uroczysta kolacja
+Zapraszamy wszystkich pracowników, współpracowników i symatyków naszej firmy na uroczystą kolację w dniu... Prosimy o przesłanie potwierdzenia. Dziękujemy.
+
+@Pracownicy, Wigilia
+Przypominamy wszystkim, że Wigilię obchodzimy wszyscy o godzinie 13:00 w salo konferencyjnej
+
+@Kandydaci, Rekrutacja zakończona 
+Witaj [FirstName] [LastName] uprzejmie informujemy, że zakończyliśmy rekrutację na nowe stanowiska w Dziale Handlowym. 
+
+@Kandydaci, Do współpracy
+[FirstName] Wszystkich Kandydatów zapraszamy do współpracy i do zapoznania się z naszą ofertą. Pracujemy z najlepszymi!
+
+@Aktualności, Nowy adres
+Uprzejmie informujemy, że adres naszej firmy uległ zmianie. Numery telefonów oraz dane rejestrowe firmy pozostają bez zmian.
+
+@Aktualności, Nowa siedziba
+Zapraszamy do nowej siedziby przy ulicy...
+
+@Aktualności, Biuro nieczynne
+Uprzejmie informujemy, że w czasie długiego weekendu nasze biuro będzie nieczynne. W pilnych sprawach prosimy kontaktować się poprzez adres e-mail..
+
+@Aktualności, Skrócone godziny pracy
+Szanowni Kilenci, Pragniemy poinformować, że w najbliższy piątek nasza firma nie pracuje. 
+
+@Aktualności, Pracujemy krócej
+Uprzejmie informujemy, że pomiędzy 24 grudnia a 2 stycznia będziemy pracować krócej.
+
+@Aktualności, Zamówienia do 13
+Z powodu sezonu urlopowego prosimy o składanie zamówień do godziny 13. Dziękujemy.
+
+@Projekty, Termin projektu
+Zbliża się termin zakończenia projektu, proszę o sprawozdania z postępu realizacji do końca dnia
+
+@Projekty, Zakończenie etapu
+Uprzejmie informujemy o zakończeniu etapu [Campaign] projektu
+
+@Projekty, Potwierdzenie
+[Company]Szanowni Państwo potwierdzamy wykonanie projektu w terminie.
+
+@Terminy, Pilny kontakt
+Witaj [FirstName] [LastName], prosimy o pilny kontakt w sprawie
+
+@Terminy, Wygasa umowa
+Uprzejmie informujemy, że wygasa nasza umowa. Prosimy o zapoznanie się z najnowszą oferą na stronie www...
+
+@Terminy, Promocja przedłużona
+Uprzejmie informujemy, że promocja  została przedłużona do 3 LIPCA.
+
+@Terminy, Usługa wygasa
+[Company] Informujemy, że dobiega końca okres abonamentowy Twojej usługi
+
+@Terminy, Gwarancja wygasa
+Informujemy, że dobiega końca okres gwarancji. W celu przedłużenia prosimy o kontakt.
+
+@Tokeny, Państwa hasło
+Państwa hasło dające dostęp do systemu - '[Token]'
+
+@Hasło, Hasło zmienione
+[FirstName] [LastName] Twoje hasło zostało zmienione.
+
+@Współpraca, Dostęp on-line
+Z dniem 1 października uruchomiliśmy dla Państwa dostęp do on-linowego systemu zamówień. Zapraszamy.
+
+@Współpraca, Aktualny terminarz
+[Company] Mamy przyjemność zaprezentować aktualny terminarz szkoleń z zakresu produktów... Szczegoły u Państwa opiekunów.
+
+@Współpraca, Z partnerami
+Zapraszamy do zapoznania się z Nowościami oraz Ofertą specjalną na [Campaign]
+
+@Współpraca, Prośba o kontakt
+Sz. P. [FirstName] [LastName] Jeżeli będzie Pan zainteresowany wyceną lub spotkaniem z nami prosimy o kontakt.
+
+@Współpraca, Program lojalnościowy
+[Company] Mamy przyjemność poinformawać Państwa o uruchomieniu programu lojalnościowego [Campaign]. Programu przygotowanego z myślą o naszych zarejestrowanych partnerach.

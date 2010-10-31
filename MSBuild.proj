@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Required:
+  1. MSBuild Community Tasks - http://msbuildtasks.tigris.org/
+  2. c:\program Files\subversion\bin\svninfo.exe - for example from VisualSVN
+  Please build after SVN Commit
+-->
+<Project ToolsVersion="2.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+  <PropertyGroup>
+    <Major>1</Major>
+    <Minor>2</Minor>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SourceFiles Include="SmsProgram\**\*.cs"/>
+    <DllFiles Include="SmsProgram\Dll\*.*"/>
+    <ReferenceFiles Include="SevenZipSharp.dll"/>
+    <ResxFiles Include="SmsProgram\*.resx"/>
+    <AdditionalFiles Include="SmsProgram\SmsProgram.smst;SmsProgram\SmsProgram.smsp;SmsProgram\SmsProgram.ico;SmsProgram\*.lang" />
+    <TargetFiles Include="Bin\*.dll;Bin\*.exe;Bin\*.smst;Bin\*.smsp;Bin\*.config;Bin\*.ico"/>
+  </ItemGroup>
+
+  <Target Name="Build">
+
+    <MakeDir Directories="Bin" ContinueOnError="true"/>
+
+    <Version BuildType="Automatic" StartDate="2010-01-01" >
+      <Output TaskParameter="Build" PropertyName="Build" />
+    </Version>
+
+    <SvnVersion LocalPath=".">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+
+    <Message Text="Version: $(Major).$(Minor).$(Build).$(Revision)"/>
+
+    <FileUpdate
+      Files="SmsProgram\Properties\AssemblyInfo.cs"
+      Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+      ReplacementText="$(Major).$(Minor).$(Build).$(Revision)" />
+
+    <Copy SourceFiles="@(DllFiles)" DestinationFolder="Bin" SkipUnchangedFiles="true"/>
+    <Copy SourceFiles="@(AdditionalFiles)" DestinationFolder="Bin" SkipUnchangedFiles="true"/>
+    <Copy SourceFiles="SmsProgram\app.config" DestinationFiles="Bin\SmsProgram.exe.config" SkipUnchangedFiles="true"/>
+
+    <GenerateResource
+      Sources="SmsProgram\Properties\Resources.resx"
+      StronglyTypedFilename="SmsProgram\Properties\Resources.Designer.cs"
+      StronglyTypedNamespace="SmsProgram.Properties"
+      StronglyTypedLanguage="c#"
+      UseSourcePath="true">
+      <Output TaskParameter = "OutputResources"	ItemName="ResourceFiles"/>
+    </GenerateResource>
+
+    <FileUpdate
+      Files="SmsProgram\Properties\Resources.Designer.cs"
+      Regex='"SmsProgram.Properties.Resources"'
+      ReplacementText='"Resources"'/>
+
+    <GenerateResource
+      Sources="@(ResxFiles)"
+      UseSourcePath="true">
+      <Output TaskParameter = "OutputResources"	ItemName="ResourceFiles"/>
+    </GenerateResource>
+
+    <Csc Sources="@(SourceFiles)"
+      Win32Icon="SmsProgram\SmsProgram.ico"
+      Platform="AnyCPU"
+      TargetType="winexe"
+      AdditionalLibPaths="Bin"
+      References="@(ReferenceFiles)" 
+      OutputAssembly="Bin\SmsProgram.exe"
+      Resources="@(ResourceFiles)"
+      DebugType="pdbonly"
+      Optimize="true"
+      WarningLevel="4"/>
+
+    <FileUpdate
+      Files="SmsProgram\Properties\AssemblyInfo.cs"
+      Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+      ReplacementText="$(Major).$(Minor).0.0" />
+
+    <FileUpdate
+      Files="SmsProgram\Properties\Resources.Designer.cs"
+      Regex='"Resources"'
+      ReplacementText='"SmsProgram.Properties.Resources"'/>
+
+    <Delete Files="@(ResourceFiles)" />
+
+    <Sleep Milliseconds="1000"/>
+
+    <Zip Files="@(TargetFiles)" WorkingDirectory="Bin"
+      ZipFileName="Bin\SmsProgram-$(Major).$(Minor).$(Build).$(Revision).zip"/>
+    
+    <Unzip ZipFileName="Bin\SmsProgram-$(Major).$(Minor).$(Build).$(Revision).zip"
+      TargetDirectory="R:\SmsProgram\SmsProgram-$(Major).$(Minor).$(Build).$(Revision)"/>
+
+    <Unzip ZipFileName="Bin\SmsProgram-$(Major).$(Minor).$(Build).$(Revision).zip"
+      TargetDirectory="R:\SmsProgram\Bin"/>
+
+    <!--
+    <Mail SmtpServer="pkserver2008"
+      To="kap@pk-soft.com"
+      From="sms-program@sms-program.pl"
+      Subject="Już jest nowa wersja SmsProgram-$(Major).$(Minor).$(Build).$(Revision)"
+      Body="Zajrzyj na R:\SmsProgram\SmsProgram-$(Major).$(Minor).$(Build).$(Revision)" />
+      -->
+
+    <FtpUpload
+      LocalFile="Bin\SmsProgram-$(Major).$(Minor).$(Build).$(Revision).zip"
+      RemoteUri="ftp://sms-program.pl/App_Data/SmsProgram-$(Major).$(Minor).$(Build).$(Revision).zip" 
+      UsePassive="true"
+      UserName="smsprogram"
+      Password="WielkiSukces"/>
+
+
+  </Target>
+
+</Project>

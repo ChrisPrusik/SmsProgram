@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{823B806A-9944-446D-B1B3-0CA35DFDCA92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmsProgram</RootNamespace>
+    <AssemblyName>SmsProgram</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SmsProgram.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SmsProgram.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\CampaignAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CampaignAddForm.Designer.cs">
+      <DependentUpon>CampaignAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CampaignEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CampaignEditForm.Designer.cs">
+      <DependentUpon>CampaignEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DeliveryProviders.cs" />
+    <Compile Include="Model\DeliveryTypes.cs" />
+    <Compile Include="Forms\FilterBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterBuilderForm.Designer.cs">
+      <DependentUpon>FilterBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Filter.cs" />
+    <Compile Include="Forms\FilterExamplesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterExamplesForm.Designer.cs">
+      <DependentUpon>FilterExamplesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterRangeForm.Designer.cs">
+      <DependentUpon>FilterRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterTextForm.Designer.cs">
+      <DependentUpon>FilterTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Grid.cs" />
+    <Compile Include="Forms\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InsertLookupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertLookupForm.Designer.cs">
+      <DependentUpon>InsertLookupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Forms\PropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PropertiesForm.Designer.cs">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterDatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterDatesForm.Designer.cs">
+      <DependentUpon>FilterDatesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SmsConverter.cs" />
+    <Compile Include="Model\SmsFileTypes.cs" />
+    <Compile Include="Model\SmsProject.cs">
+      <DependentUpon>SmsProject.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\SmsProject.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmsProject.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Table.cs" />
+    <Compile Include="Forms\TemplateEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemplateEditForm.Designer.cs">
+      <DependentUpon>TemplateEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TemplateExamples.cs">
+      <DependentUpon>TemplateExamples.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\TemplateExamples.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TemplateExamples.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TemplateExamplesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemplateExamplesForm.Designer.cs">
+      <DependentUpon>TemplateExamplesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Templater.cs" />
+    <EmbeddedResource Include="Forms\CampaignAddForm.resx">
+      <DependentUpon>CampaignAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CampaignEditForm.resx">
+      <DependentUpon>CampaignEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterBuilderForm.resx">
+      <DependentUpon>FilterBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterExamplesForm.resx">
+      <DependentUpon>FilterExamplesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterRangeForm.resx">
+      <DependentUpon>FilterRangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterTextForm.resx">
+      <DependentUpon>FilterTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertLookupForm.resx">
+      <DependentUpon>InsertLookupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PropertiesForm.resx">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterDatesForm.resx">
+      <DependentUpon>FilterDatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TemplateEditForm.resx">
+      <DependentUpon>TemplateEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TemplateExamplesForm.resx">
+      <DependentUpon>TemplateExamplesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="SmsProgram.smsp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SmsProgram.smst">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Model\SmsProject.xsc">
+      <DependentUpon>SmsProject.xsd</DependentUpon>
+    </None>
+    <None Include="Model\SmsProject.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SmsProject.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\SmsProject.xss">
+      <DependentUpon>SmsProject.xsd</DependentUpon>
+    </None>
+    <None Include="Model\TemplateExamples.xsc">
+      <DependentUpon>TemplateExamples.xsd</DependentUpon>
+    </None>
+    <None Include="Model\TemplateExamples.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TemplateExamples.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\TemplateExamples.xss">
+      <DependentUpon>TemplateExamples.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dll\ActiveUp.Net.Common.dll" />
+    <Content Include="Dll\ActiveUp.Net.Dns.dll" />
+    <Content Include="Dll\ActiveUp.Net.Imap4.dll" />
+    <Content Include="Dll\ActiveUp.Net.Mail.dll" />
+    <Content Include="Dll\ActiveUp.Net.Nntp.dll" />
+    <Content Include="Dll\ActiveUp.Net.OpenPGP.dll" />
+    <Content Include="Dll\ActiveUp.Net.Pop3.dll" />
+    <Content Include="Dll\ActiveUp.Net.Smtp.dll" />
+    <Content Include="Dll\Excel.dll" />
+    <Content Include="Dll\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Dll\Ionic.Zip.Reduced.dll" />
+    <Content Include="SmsProgram.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CampaignAddMenu.png" />
+    <Content Include="Resources\CampaignEditMenu.png" />
+    <Content Include="Resources\CampaignPauseMenu.png" />
+    <Content Include="Resources\CampaignSendOneSmsMenu.png" />
+    <Content Include="Resources\CampaignStartMenu.png" />
+    <Content Include="Resources\CampaignTemplateMenu.png" />
+    <Content Include="Resources\EditAddNewMenu.png" />
+    <Content Include="Resources\EditCopyMenu.png" />
+    <Content Include="Resources\EditCutMenu.png" />
+    <Content Include="Resources\EditDeleteMenu.png" />
+    <Content Include="Resources\EditLookupMenu.png" />
+    <Content Include="Resources\EditPasteMenu.png" />
+    <Content Include="Resources\EditPasteSpecialMenu.png" />
+    <Content Include="Resources\EditUndoMenu.png" />
+    <Content Include="Resources\FileExitMenu.png" />
+    <Content Include="Resources\FileImportMenu.png" />
+    <Content Include="Resources\FileNewMenu.png" />
+    <Content Include="Resources\FileOpenMenu.png" />
+    <Content Include="Resources\FilePropertiesMenu.png" />
+    <Content Include="Resources\FileSaveMenu.png" />
+    <Content Include="Resources\FilterAddRangeMenu.png" />
+    <Content Include="Resources\FilterAddTextMenu.png" />
+    <Content Include="Resources\FilterBuilderMenu.png" />
+    <Content Include="Resources\FilterButton.png" />
+    <Content Include="Resources\FilterShowAllMenu.png" />
+    <Content Include="Resources\HelpAboutMenu.png" />
+    <Content Include="Resources\HelpBuyProgramMenu.png" />
+    <Content Include="Resources\HelpHomePageMenu.png" />
+    <Content Include="Resources\HelpManualMenu.png" />
+    <Content Include="Resources\HelpRegisterMenu.png" />
+    <Content Include="Resources\HelpSuggestionsMenu.png" />
+    <Content Include="Resources\HelpSupportMenu.png" />
+    <Content Include="Resources\SearchNewMenu.png" />
+    <Content Include="Resources\SearchNextMenu.png" />
+    <Content Include="Resources\SearchPreviousMenu.png" />
+    <Content Include="Resources\SearchSearchMenu.png" />
+    <Content Include="Resources\SearchReplaceMenu.png" />
+    <Content Include="Resources\ToolsAutoUpdateMenu.png" />
+    <Content Include="Resources\ToolsCustomFieldsMenu.png" />
+    <Content Include="Resources\ToolsPromoSmsMenu.png" />
+    <Content Include="Resources\ToolsSettingsMenu.png" />
+    <Content Include="Resources\ToolsTestSystemMenu.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
