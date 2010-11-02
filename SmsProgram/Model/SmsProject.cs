@@ -717,8 +717,9 @@ namespace SmsProgram.Model
                     if (row.CampaignsRow != null && row.Campaign != row.CampaignsRow.Campaign)
                         row.Campaign = row.CampaignsRow.Campaign;
 
-                    if (row.CampaignsRow != null && row.Type != "sms" && row.Type != "email")
-                        row.Type = row.CampaignsRow.Type;
+                    // row.Type powinien być używany wyłącznie jako relacja
+                    //if (row.CampaignsRow != null && row.Type != "sms" && row.Type != "email")
+                    //    row.Type = row.CampaignsRow.Type;
 
                     if (row.TemplatesRow == null && row.IsMessageNull() == false && row.Message != "")
                     {
